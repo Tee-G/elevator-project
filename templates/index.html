@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elevator Design Calculator</title>
+</head>
+<body>
+    <h2>Elevator Component Calculator</h2>
+    <form method="POST">
+        <label>Cabin Length (cm):</label><br>
+        <input type="text" name="L"><br><br>
+
+        <label>Cabin Breadth (cm):</label><br>
+        <input type="text" name="B"><br><br>
+
+        <label>Cabin Height (cm):</label><br>
+        <input type="text" name="H"><br><br>
+
+        <label>Payload (kg):</label><br>
+        <input type="text" name="payload"><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result %}
+        {% if result.error %}
+            <p style="color:red;">{{ result.error }}</p>
+        {% else %}
+            <h3>Results:</h3>
+            <ul>
+                <li>Total Surface Area: {{ result.area }} cm²</li>
+                <li>Cabin Volume: {{ result.volume }} cm³</li>
+                <li>Cabin Weight: {{ result.weight }} kg</li>
+                <li>Counterweight: {{ result.counterweight }} kg</li>
+            </ul>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
