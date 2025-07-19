@@ -8,7 +8,15 @@ from elc import (
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/")
+def pre_index():
+    return render_template("pre index.html")
+
+@app.route("/calculate1", methods=["GET", "POST"])
+def pre1_index():
+    return render_template("pre1 index.html")
+
+@app.route("/calculate3", methods=["GET", "POST"])
 def index():
     result = None
     if request.method == 'POST':
