@@ -16,6 +16,14 @@ def pre_index():
 def pre1_index():
     return render_template("pre1 index.html")
 
+@app.route("/calculate2", methods=["GET", "POST"])
+def pre2_index():
+    return render_template("pre2 index.html")
+
+@app.route("/calculate4", methods=["GET", "POST"])
+def pre4_index():
+    return render_template("pre4 index.html")
+
 @app.route("/calculate3", methods=["GET", "POST"])
 def index():
     result = None
